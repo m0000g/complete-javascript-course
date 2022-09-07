@@ -92,8 +92,8 @@ const isFullAge = ageSarah >= 18;
 
 console.log(now - 1991 > now - 2018); */
 
-
 // Operator Precedence
+/*
 const now = 2037;
 const ageJonas = now - 1991;
 const ageSarah = now - 2018;
@@ -109,3 +109,32 @@ console.log(x, y);
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
 
+ */
+
+// Strings and Templates Literals
+
+const firstName = 'Jonas';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(jonas);
+
+// Entering Template Literals.
+// Note: we need to use back ticks
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jonasNew);
+
+// You can use back ticks to all strings.
+console.log(`Just a regular string...`);
+
+// Multiline strings.
+// BEFORE
+console.log('String with\n\
+multiple \n\
+lines');
+
+console.log(`String
+multiple
+lines`);
