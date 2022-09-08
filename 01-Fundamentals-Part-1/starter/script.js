@@ -192,7 +192,7 @@ console.log(n);
 // TRUTHY AND FALSY VALUES
 // 5 falsy values: 0, '', undefined, null, NaN -> becoome false after trying to convert them to boolean
 // Anything else is truthy values
-
+/*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean(`Jonas`));
@@ -213,4 +213,67 @@ if (height) {
 }
 else {
     console.log(`Heigh is UNDEFINED`);
+} */
+
+// EQUALITY OPPERATORS == VS ===
+/*
+const age = '18';
+
+if (age === 18) console.log(`You just became an adult (strict)`);
+
+if (age == 18) console.log(`You just became an adult (loose)`);
+
+// Getting a value from any web page
+
+const favorite = Number(prompt(`What's your favorite number?`));
+console.log(favorite);
+console.log(typeof favorite);
+
+if (favorite === 23) { //'23' == 23
+    console.log(`Cool! 23 ius an amazing number!`);
+
+} else if (favorite === 7) {
+    console.log(`7 is also a cool number`);
 }
+else {
+    console.log(`Number is not 23 or 7`);
+}
+
+if (favorite !== 23) {
+    console.log(`Why didn't you choose 23?`);
+}
+
+ */
+
+// BASIC BOOLEAN LOGIC: AND, OR & NOT OPERATORS
+// Sarah has a driver's license AND good vision
+/* 
+const age = 16 // 21 are the new 16!
+const hasDriverLicense = true; // A
+const hasGoodVision = true; // B
+
+console.log(hasDriverLicense && hasGoodVision); // true
+console.log(hasDriverLicense || hasGoodVision); // true
+console.log(!hasDriverLicense); // false
+
+if (hasDriverLicense && hasGoodVision) {
+    console.log(`Sarah is able to drive`);
+}
+else {
+    console.log(`Someone else should drive...`);
+}
+
+const isTired = false; //C
+console.log(hasDriverLicense && hasGoodVision && isTired);
+
+if (hasDriverLicense && hasGoodVision && !isTired) {
+    console.log(`Sarah is able to drive`);
+}
+else {
+    console.log(`Someone else should drive...`);
+}
+
+ */
+
+
+
