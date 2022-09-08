@@ -113,7 +113,7 @@ console.log(ageJonas, ageSarah, averageAge);
 
 // Strings and Templates Literals
 
-const firstName = 'Jonas';
+/* const firstName = 'Jonas';
 const job = 'teacher';
 const birthYear = 1991;
 const year = 2037;
@@ -137,4 +137,28 @@ lines');
 
 console.log(`String
 multiple
-lines`);
+lines`); */
+
+// Taking Decisions: if / else Statements
+
+const age = 15;
+const isOldEnough = age >= 18;
+
+if (age >= 18) {
+    console.log(`Yes, it's old enough 😀`);
+}
+else {
+    const yearsLeft = 18 - age;
+    console.log(`Is not old enoght 😔, she needs to wait another ${yearsLeft} years`);
+}
+
+let century;
+const birthYear = 2012;
+if (birthYear <= 2000) {
+    century = 20;
+}
+else {
+    century = 21;
+}
+
+console.log(century);
