@@ -247,7 +247,7 @@ if (favorite !== 23) {
 
 // BASIC BOOLEAN LOGIC: AND, OR & NOT OPERATORS
 // Sarah has a driver's license AND good vision
-/* 
+/*
 const age = 16 // 21 are the new 16!
 const hasDriverLicense = true; // A
 const hasGoodVision = true; // B
@@ -275,5 +275,71 @@ else {
 
  */
 
+// SWITCH STATEMENT
+
+/* const day = `saturday`;
+
+switch (day) {
+    case `monday`:
+        console.log(`Plan course structure`);
+        console.log(`Go to coding meetup`);
+        break;
+    case `tuesday`:
+        console.log(`Prepare theory videos`);
+        break;
+    case `wednesday`:
+    case `thrusday`:
+        console.log(`Write code example`);
+        break;
+    case `friday`:
+        console.log(`Record videos`);
+        break;
+    case `saturday`:
+    case `sunday`:
+        console.log(`Enjoy the weekend`);
+        break;
+    default:
+        console.log('Not a valida day');
+}
 
 
+// Exercise with IF ELSE.
+
+if (day === `monday`) {
+    console.log(`Plan course structure`);
+    console.log(`Go to coding meetup`);
+} else if (day === `tuesday`) {
+    console.log(`Prepare theory videos`);
+}
+else if (day === `wednesday` || day === `thrusday`) {
+    console.log(`Write code example`);
+}
+else if (day === `saturday` || day === `thrusundaysday`) {
+    console.log(`Enjoy the weekend`);
+}
+else {
+    console.log('Not a valida day');
+} */
+
+// THE CONDITIONAL (TERNARY) STATEMENT
+const age = 2;
+age >= 18 ? console.log(`I like to drink wine 🍷`) :
+    console.log(`I like to drink water 💦`);
+
+// It's an expression and called ternary because has 3 parts.
+// We can use it to conditionally declare variables.
+const drink = age >= 18 ? 'wine 🍷' : `water 💦`;
+console.log(drink);
+
+// The long way
+let drink2;
+if (age >= 18) {
+    drink2 = 'wine 🍷';
+}
+else {
+    drink2 = 'water 💦';
+}
+console.log(drink2);
+
+// Since it's an expression, you can include that into a template literal
+console.log(`I would like some ${age >= 18 ? 'wine 🍷' : `water 💦`}`);
