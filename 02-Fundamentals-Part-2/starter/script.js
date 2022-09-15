@@ -103,3 +103,42 @@ console.log(yearsUntilRetirement(2037, 1991, `Jones`));
 console.log(yearsUntilRetirement(2037, 1950, `Mike`));
 
  */
+
+
+// ARRAYS 
+
+const friends = [`Michael`, `Steven`, `Peter`]; // Literal syntax
+console.log(friends);
+
+const y = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); // 3
+console.log(friends[friends.length - 1]); // Peter
+
+friends[2] = `Jay`;
+console.log(friends);
+// firneds = [`Bob`, `Alice`]; // Not valid
+
+const firstName = `Jonas`;
+const jonas = [firstName, `Schedtmann`, 2037 - 1991, `teacher`, friends];
+console.log(jonas);
+console.log(jonas.length);
+
+const calAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calAge(years[0]);
+const age2 = calAge(years[1]);
+const age3 = calAge(years[2]);
+const age4 = calAge(years[3]);
+const age5 = calAge(years[4]);
+console.log(age1, age2, age3, age4, age5);
+
+const ages = [calAge(years[0]), calAge(years[1]), calAge(years[2]), calAge(years[3]), calAge(years[4])];
+console.log(ages);
