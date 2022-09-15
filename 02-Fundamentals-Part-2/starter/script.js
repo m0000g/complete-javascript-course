@@ -105,8 +105,8 @@ console.log(yearsUntilRetirement(2037, 1950, `Mike`));
  */
 
 
-// ARRAYS 
-
+// ARRAYS
+/*
 const friends = [`Michael`, `Steven`, `Peter`]; // Literal syntax
 console.log(friends);
 
@@ -142,3 +142,41 @@ console.log(age1, age2, age3, age4, age5);
 
 const ages = [calAge(years[0]), calAge(years[1]), calAge(years[2]), calAge(years[3]), calAge(years[4])];
 console.log(ages);
+
+ */
+
+// Arrays Operations / Methods
+/* 
+const friends = [`Michael`, `Steven`, `Peter`];
+const newLenght = friends.push(`Jay`); // Returns the length of the new array.
+
+console.log(friends);
+console.log(newLenght);
+
+friends.unshift(`John`);
+console.log(friends);
+
+// Remove elements from the array, last elements
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+// Removes first element of the array
+friends.shift();
+console.log(friends);
+
+// Returns the position of the element.
+console.log(friends.indexOf(`Steven`));
+console.log(friends.indexOf(`Bob`));
+
+// includes, returns true if the element exist, false if is doesn't
+friends.push(23);
+console.log(friends.includes(`Steven`));
+console.log(friends.includes(`Bob`));
+console.log(friends.includes(23));
+
+if (friends.includes(`Steven`)) {
+    console.log(`You have a friend called Steven`);
+}
+ */
