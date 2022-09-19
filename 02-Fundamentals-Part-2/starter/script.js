@@ -181,3 +181,35 @@ if (friends.includes(`Steven`)) {
 }
  */
 
+const jonas = {
+    firstName: `Jonas`,
+    lastName: `Schedtmann`,
+    age: 2037 - 1991,
+    job: `teacher`,
+    friends: [`Michael`, `Peter`, `Steven`]
+};
+console.log(jonas);
+// Sample dot notation
+console.log(jonas.lastName);
+// Sample breaker notation
+console.log(jonas[`lastName`]);
+
+const nameKey = `Name`;
+// use that variable to get the first and last name
+console.log(jonas[`first${nameKey}`], jonas[`last${nameKey}`]);
+
+const interestedIn = prompt(`What do you want to know about Jonas (firstName, lastName, age, job, friends)`);
+// jonas.interestIn will not work so breaker notation is neceary
+// console.log(jonas[`${interestedIn}`]);
+// in case the atribute does not exist, we get undefined
+
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+}
+else {
+    console.log(`Wrong request, choose between  (firstName, lastName, age, job, friends)`)
+}
+
+jonas.location = `Portugal`;
+jonas[`twitter`] = `@jonasschemedtman`;
+console.log(jonas);
