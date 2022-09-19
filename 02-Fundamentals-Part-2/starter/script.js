@@ -180,7 +180,7 @@ if (friends.includes(`Steven`)) {
     console.log(`You have a friend called Steven`);
 }
  */
-
+/* 
 const jonas = {
     firstName: `Jonas`,
     lastName: `Schedtmann`,
@@ -198,7 +198,7 @@ const nameKey = `Name`;
 // use that variable to get the first and last name
 console.log(jonas[`first${nameKey}`], jonas[`last${nameKey}`]);
 
-const interestedIn = prompt(`What do you want to know about Jonas (firstName, lastName, age, job, friends)`);
+//const interestedIn = prompt(`What do you want to know about Jonas (firstName, lastName, age, job, friends)`);
 // jonas.interestIn will not work so breaker notation is neceary
 // console.log(jonas[`${interestedIn}`]);
 // in case the atribute does not exist, we get undefined
@@ -213,3 +213,27 @@ else {
 jonas.location = `Portugal`;
 jonas[`twitter`] = `@jonasschemedtman`;
 console.log(jonas);
+
+// Challenge
+// `Jonas has 3 friends, and his best friend is called Michael`
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called  ${jonas.friends[0]}`); */
+
+// You can also Store Functions.
+const jonas = {
+    firstName: `Jonas`,
+    lastName: `Schedtmann`,
+    birthYear: 1991,
+    job: `teacher`,
+    friends: [`Michael`, `Peter`, `Steven`],
+    hasDriversLicense: true,
+
+    // A function expression inside an object (called a Method)
+    calAge: function () { return 2037 - this.birthYear }
+
+};
+
+// console.log(jonas.calAge(1991));
+// console.log(jonas[`calAge`](1991));
+
+console.log(jonas.calAge());
