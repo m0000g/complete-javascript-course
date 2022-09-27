@@ -318,7 +318,7 @@ for (let i = 0; i < jonas.length; i++) {
 } */
 
 // LOOPING BACKWARDS
-
+/*
 const jonas = [
     `Jonas`,
     `Schemedtmann`,
@@ -341,4 +341,23 @@ for (let exercise = 1; exercise <= 3; exercise++) {
     for (let rep = 0; rep < 6; rep++) {
         console.log(`Exercise ${exercise} lifting weight repetition ${rep} 💪`);
     }
+} */
+
+
+// THE WHILE LOOP
+
+/* let i = 1;
+while (i <= 10) {
+    console.log(`WHILE: lifting weight repetition ${i} 🏋️‍♂️`);
+    i++;
+} */
+
+// Let's create a condition with a random number.
+
+let dice = Math.trunc(Math.random() * 6) + 1; // Number between 0 and 5
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log(`Loop is about to end...`);
 }
