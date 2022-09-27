@@ -146,7 +146,7 @@ console.log(ages);
  */
 
 // Arrays Operations / Methods
-/* 
+/*
 const friends = [`Michael`, `Steven`, `Peter`];
 const newLenght = friends.push(`Jay`); // Returns the length of the new array.
 
@@ -180,7 +180,7 @@ if (friends.includes(`Steven`)) {
     console.log(`You have a friend called Steven`);
 }
  */
-/* 
+/*
 const jonas = {
     firstName: `Jonas`,
     lastName: `Schedtmann`,
@@ -220,7 +220,7 @@ console.log(jonas);
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called  ${jonas.friends[0]}`); */
 
 // You can also Store Functions.
-const jonas = {
+/* const jonas = {
     firstName: `Jonas`,
     lastName: `Schedtmann`,
     birthYear: 1991,
@@ -237,13 +237,6 @@ const jonas = {
     },
 
     getSummary: function () {
-
-        /* if (this.hasDriversLicense) {
-            return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}, and he has a driver's license`;
-        }
-        else {
-            return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}.`;
-        } */
 
         return `${jonas.firstName} is a ${jonas.calAge()} years old ${jonas.job}${this.hasDriversLicense ? "and he has a driver's license." : "."}`;
 
@@ -266,3 +259,61 @@ console.log(jonas.age);
 // Challenge
 // write: `Jonas is a 46 years old teacher, and he has a drivers license`
 console.log(jonas.getSummary());
+ */
+
+
+// THE LOOP
+// console.log(`Lifting weights repetition 1 🏋️‍♂️`);
+// console.log(`Lifting weights repetition 2 🏋️‍♂️`);
+
+// For loop keeps running while the condintion is TRUE
+/* for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep} 🏋️‍♂️`);
+}
+ */
+
+// LOOPING ARRAYS
+
+const jonas = [
+    `Jonas`,
+    `Schemedtmann`,
+    2037 - 1991,
+    `teacher`,
+    [`Michael`, `Peter`, `Steven`],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]);
+    // types[i] = typeof jonas[i];
+    // Cleaner way...
+    types.push(typeof jonas[i]);
+}
+
+console.log(types);
+
+// Array that contains birthYears.
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+// CONTINUE AND BREAK
+console.log(`----------- ONLY STRINGS -----------`);
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== `string`) continue;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log(`-------- BREAK WITH NUMBER ---------`);
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== `string`) break;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
