@@ -334,3 +334,11 @@ const jonas = [
 for (let i = jonas.length - 1; i >= 0; i--) {
     console.log(`${i} 🐱`, jonas[i]);
 }
+
+// Loop inside a loop
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`======= Starting Exercise ${exercise} 🏋️‍♂️`);
+    for (let rep = 0; rep < 6; rep++) {
+        console.log(`Exercise ${exercise} lifting weight repetition ${rep} 💪`);
+    }
+}
