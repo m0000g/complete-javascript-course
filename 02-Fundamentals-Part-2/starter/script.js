@@ -229,7 +229,25 @@ const jonas = {
     hasDriversLicense: true,
 
     // A function expression inside an object (called a Method)
-    calAge: function () { return 2037 - this.birthYear }
+    // calAge: function () { return 2037 - this.birthYear }
+
+    calAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function () {
+
+        /* if (this.hasDriversLicense) {
+            return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}, and he has a driver's license`;
+        }
+        else {
+            return `${jonas.firstName} is a ${jonas.age} years old ${jonas.job}.`;
+        } */
+
+        return `${jonas.firstName} is a ${jonas.calAge()} years old ${jonas.job}${this.hasDriversLicense ? "and he has a driver's license." : "."}`;
+
+    }
 
 };
 
@@ -237,3 +255,14 @@ const jonas = {
 // console.log(jonas[`calAge`](1991));
 
 console.log(jonas.calAge());
+console.log(jonas);
+
+// Returning the age value 4 times more efficiently.
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+console.log(jonas.age);
+
+// Challenge
+// write: `Jonas is a 46 years old teacher, and he has a drivers license`
+console.log(jonas.getSummary());
