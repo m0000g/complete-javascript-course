@@ -27,7 +27,7 @@ console.log(calcAge(1991));
 - Find min value in temp array
 - Subtract min from max (amplitude) and return it */
 
-const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
+/* const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
 const calcTempAmplitude = function (temps) {
   let max = temps[0];
@@ -44,7 +44,7 @@ const calcTempAmplitude = function (temps) {
 };
 
 const amplitude = calcTempAmplitude(temperatures);
-console.log(amplitude);
+console.log(amplitude); */
 
 // PROBLEM 2:
 // Function should received now two arrays of temperatures, not just one.
@@ -55,7 +55,7 @@ console.log(amplitude);
 // 2) Breaking up into sub-problems
 // - Merge 2 arrays.
 
-const calcTempAmplitudeNew = function (t1, t2) {
+/* const calcTempAmplitude = function (t1, t2) {
   const temps = t1.concat(t2);
   console.log(temps);
   let max = temps[0];
@@ -71,5 +71,49 @@ const calcTempAmplitudeNew = function (t1, t2) {
   return max - min;
 };
 
-const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [0, 0, 5]);
+const amplitudeNew = calcTempAmplitude([3, 5, 1], [9, 4, 5]);
 console.log(amplitudeNew);
+ */
+// FIXING BUGS
+// Convertion of the temperature to Kelvin
+
+const measureKelving = function () {
+  const measurement = {
+    type: `temp`,
+    unit: `celsius`,
+    value: 10,
+  };
+
+  //   console.log(measurement.value);
+  //   console.warn(measurement.value);
+  //   console.error(measurement.value);
+
+  console.table(measurement);
+  //const kelvin = Number(measurement.value) + 273;
+  const kelvin = measurement.value + 273;
+  return kelvin;
+};
+
+console.log(measureKelving());
+
+const calcTempAmplitudeBug = function (t1, t2) {
+  const temps = t1.concat(t2);
+  console.log(temps);
+  let max = 0;
+  let min = 0;
+
+  for (let i = 0; i < temps.length; i++) {
+    const curTemp = temps[i];
+    if (typeof curTemp != `number`) continue;
+    debugger;
+    if (curTemp > max) max = curTemp;
+    if (curTemp < min) min = curTemp;
+  }
+  console.log(max, min);
+  return max - min;
+};
+
+const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
+
+// 1.- Identify
+console.log(amplitudeBug);
