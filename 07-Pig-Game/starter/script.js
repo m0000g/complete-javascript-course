@@ -76,7 +76,7 @@ btnHold.addEventListener('click', function () {
       scores[activePlayer];
 
     // 2.- If score is at least 100, player wins.
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       playing = false;
       document
         .querySelector(`.player--${activePlayer}`)
