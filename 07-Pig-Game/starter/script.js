@@ -26,22 +26,17 @@ const resetGame = function () {
   scores = [0, 0];
   currentScore = 0;
   activePlayer = 0; // O - Player 0 ~ 1 - Player 1
-  playing = true;
-
-  player0El.classList.remove('player--winner');
-  player1El.classList.remove('player--winner');
-  player0El.classList.add('player--active');
-  player1El.classList.remove('player--active');
-  scores[0] = 0;
-  scores[1] = 0;
-  currentScore = 0;
-  activePlayer = 0;
   score0El.textContent = 0;
   score1El.textContent = 0;
   current0El.textContent = 0;
   current1El.textContent = 0;
-  diceEl.classList.add('hidden');
   playing = true;
+
+  diceEl.classList.add('hidden');
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 };
 
 btnNew.addEventListener('click', resetGame);
