@@ -176,3 +176,74 @@ matilda.calAge();
 const f = jonas.calAge;
 f(); // Can't read year - undefined, it's a function, not an object.
  */
+
+// REGULAR FUNCTIONS VS ARROW FUNCTIONS
+
+// var firstName = 'Matilda';
+// do not use var, this will add a
+// firstName to the window object
+
+const jonas = {
+  firstName: `Jonas`,
+  year: 1989,
+  calcAge: function () {
+    // console.log(this);
+    console.log(2037 - this.year);
+
+    // Solution 1
+    /* const self = this; // selft of that
+    const isMillenian = function () {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+      // console.log(this.year >= 1981 && this.year <= 1996); does not work
+    };
+    isMillenian(); */
+
+    // Solution 2
+    const isMillenian2 = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenian2();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey! ${this.firstName}`);
+  },
+  greet2: function () {
+    console.log(this);
+    console.log(`Hey! ${this.firstName}`);
+  },
+};
+
+jonas.greet(); // Hey! undefined =>
+// An arrow funcion will not get its own keyword.
+// Uses the This keyword of its sorroundings.
+// The parent of greet method is the global scope.
+// That is an object literal.
+
+console.log(this.firstName);
+// In the window object there is no firstName method.
+// Hence, undefined.
+
+jonas.greet2(); // Works
+
+jonas.calcAge();
+// Uses a solution to use this inside isMillenian2
+// Arrow function uses "This" keyword from parent function.
+// In the parent scope the this keyword is "Jonas"
+
+// ARGUMENTS KEYWORD
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 6, 6, 6); // you can add more arguments!
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 5); // arguments are not available in arrow functions
