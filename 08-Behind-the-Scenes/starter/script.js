@@ -182,7 +182,7 @@ f(); // Can't read year - undefined, it's a function, not an object.
 // var firstName = 'Matilda';
 // do not use var, this will add a
 // firstName to the window object
-
+/* 
 const jonas = {
   firstName: `Jonas`,
   year: 1989,
@@ -191,13 +191,13 @@ const jonas = {
     console.log(2037 - this.year);
 
     // Solution 1
-    /* const self = this; // selft of that
-    const isMillenian = function () {
-      console.log(self);
-      console.log(self.year >= 1981 && self.year <= 1996);
-      // console.log(this.year >= 1981 && this.year <= 1996); does not work
-    };
-    isMillenian(); */
+    // const self = this; // selft of that
+    // const isMillenian = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this.year >= 1981 && this.year <= 1996); does not work
+    // };
+    // isMillenian();
 
     // Solution 2
     const isMillenian2 = () => {
@@ -232,10 +232,10 @@ jonas.greet2(); // Works
 jonas.calcAge();
 // Uses a solution to use this inside isMillenian2
 // Arrow function uses "This" keyword from parent function.
-// In the parent scope the this keyword is "Jonas"
+// In the parent scope the this keyword is "Jonas" */
 
 // ARGUMENTS KEYWORD
-const addExpr = function (a, b) {
+/* const addExpr = function (a, b) {
   console.log(arguments);
   return a + b;
 };
@@ -247,3 +247,23 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 5); // arguments are not available in arrow functions
+ */
+
+// PRIMITIVES VS OBJECTS (PRIMITIVE VS REFERENCE TYPES)
+// Primitives are numbers, strings, booleans.
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log('Friend:', friend);
+console.log('Me:', me);
