@@ -252,7 +252,7 @@ addArrow(2, 5); // arguments are not available in arrow functions
 // PRIMITIVES VS OBJECTS (PRIMITIVE VS REFERENCE TYPES)
 // Primitives are numbers, strings, booleans.
 
-let age = 30;
+/* let age = 30;
 let oldAge = age;
 age = 31;
 console.log(age);
@@ -267,3 +267,42 @@ const friend = me;
 friend.age = 27;
 console.log('Friend:', friend);
 console.log('Me:', me);
+ */
+
+// PRIMITIVES VS. OBJECTS IN PRACTICE
+/* 
+let lastName = `Williams`;
+let oldLastName = lastName;
+lastName = `Davis`;
+console.log(lastName, oldLastName);
+
+// Reference types
+const jessica = {
+  fistName: `Jessica`,
+  lastName: `Willams`,
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = `Davis`;
+console.log(`Before marrieage:`, jessica);
+console.log(`After marrieage:`, marriedJessica);
+//marriedJessica = {};
+
+// Copying objects
+const jessica2 = {
+  fistName: `Jessica`,
+  lastName: `Williams`,
+  age: 27,
+  family: [`Alice`, `Bob`],
+};
+
+const jessicaCopy = Object.assign({}, jessica2);
+jessicaCopy.lastName = `Davis`;
+console.log(`Before marriage:`, jessica2);
+console.log(`After marrieage:`, jessicaCopy);
+
+// Deeply nested, is not copied to jessicaCopy
+jessicaCopy.family.push(`Mary`);
+jessicaCopy.family.push(`Jhon`);
+
+console.log(jessica2, jessicaCopy); */
