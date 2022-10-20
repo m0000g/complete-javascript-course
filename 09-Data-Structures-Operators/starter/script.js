@@ -39,16 +39,174 @@ const restaurant = {
       `Order received! ${this.starterMenu[startedIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
+  orderPizza: function (mainIngridient, ...otherIngridient) {
+    console.log(mainIngridient);
+    console.log(otherIngridient);
+  },
 };
+
+// LOGICAL ASSIGMENT OPERATORS
+/* 
+const rest1 = {
+  name: 'Capri',
+  //numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Giovanni Rossi',
+};
+
+// OR assigment operator
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nulish assigment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// AND assigment operator
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2); */
+
+// NULISH COALESING OPERATOR ??
+
+/* restaurant.numGuest = 0;
+const guests = restaurant.numGuest || 10; // 10 because 0 is falsy
+console.log(guests);
+
+const guestCorrect = restaurant.numGuest ?? 10;
+console.log(guestCorrect); // Fixing the problem! */
+
+// SHORT CIRCUITING
+// 1. Use any data type
+// 2. Return any data type
+// 3. Short Circuiting
+/* console.log('------ OR ------');
+console.log(3 || 'Jonas'); // 3
+console.log('' || 'Jonas'); // Jonas
+console.log(true || 0); // true
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'Hello' || 3); // Hello
+
+// restaurant.numGuest = 23; // will not work with 0, it's a falsy value.
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+console.log('----AND---');
+console.log(0 && 'Jonas'); // 0
+console.log(7 && 'Jonas'); // Jonas
+console.log('Hello' && 23 && null && 'Jonas'); // null
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+ */
+
+// REST PATTERN AND PARAMETERS
+/* 
+// 1) Destructuring
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushrooms'); */
+
+// SPREAD OPERATOR
+/* 
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+
+console.log(...newArr);
+console.log(1, 2, 7, 8, 9);
+
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
+
+// Copy Array
+const mainMenuCopy = [...restaurant.mainMenu]; // Shallow copy of this array.
+
+// Join two arrays or more.
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// You can use the spread operator with iterables: arrays, maps, sets, strings (not objects)
+const str = "Jonas";
+const letters = [...str, "", 5];
+console.log(letters);
+console.log(...str); // Not posible with a template literal.
+
+// const ingredients = [
+//   prompt("Let's make pasta! Ingridient 1?"),
+//   prompt("Ingridient 2?"),
+//   prompt("Ingridient 3?"),
+// ];
+
+// restaurant.orderPasta(...ingredients); 
+
+// Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Giuseppe" };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = "Ristorante Roma";
+console.log(restaurantCopy.name);
+console.log(restaurant.name); */
 
 // DESTRUCTURING OBJECTS.
 
-const { name, openingHours, categories } = restaurant;
+/* const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
 const {
   name: restaurantName,
-  openingHours: hours,
+  openingHours: hours,  
   categories: tags,
 } = restaurant;
 console.log(restaurantName, hours, tags);
@@ -84,7 +242,7 @@ restaurant.orderDelivery({
   startedIndex: 2,
 });
 
-restaurant.orderDelivery({ address: 'Via del Sole, 21' });
+restaurant.orderDelivery({ address: 'Via del Sole, 21' }); */
 
 /* 
 // Destructuring arrays
