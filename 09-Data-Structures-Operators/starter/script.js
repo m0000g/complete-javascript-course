@@ -81,6 +81,12 @@ console.log(answer);
 
 console.log(question.get(Number(answer) === question.get('correct')));
 
+// Convert map to array
+console.log([...question]);
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
+
 // Maps
 /* const rest = new Map();
 rest.set('name', 'Clasico Italiano');
