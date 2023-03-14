@@ -1,13 +1,33 @@
 'use strict';
 
+// Sets
+// A collection of unique values can't hae any duplicates
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(orderSet);
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza')); //true
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+orderSet.delete('Risotto');
+console.log(orderSet);
+
 // Data needed for a later exercise
-const flights =
+/* const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']; */
 
 // ENHANCED OBJECT LITERALS sample -> Compute name
-const openingHours = {
+/* const openingHours = {
   [weekdays[3]]: {
     open: 12,
     close: 22,
@@ -21,17 +41,17 @@ const openingHours = {
     close: 24,
   },
 };
-
+ */
 // Data needed for first part of the section
-const restaurant = {
+/* const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'], */
 
-  // ES6 enhanced object literals
-  openingHours,
+// ES6 enhanced object literals
+/* openingHours,
 
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
@@ -50,30 +70,30 @@ const restaurant = {
     console.log(mainIngridient);
     console.log(otherIngridient);
   },
-};
+}; */
 
 // LOOPING OBJECTS - OBJECTS KEYS, VALUES AND ENTRIES
 
-const properties = Object.keys(openingHours);
+/* const properties = Object.keys(openingHours);
 console.log(properties);
 let openStr = `We are open on ${properties.length} days `;
 
 for (const day of properties) {
   openStr += `${day}, `;
 }
-console.log(openStr);
+console.log(openStr); */
 
 // Properties values
-const values = Object.values(openingHours);
+/* const values = Object.values(openingHours);
 console.log(values);
-
+ */
 // Entiere Object
-const entries = Object.entries(openingHours);
+/* const entries = Object.entries(openingHours); */
 //console.log(entries);
 // [key, value]
-for (const [day, { open, close }] of entries) {
+/* for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
-}
+} */
 
 // OPTIONAL CHAINING
 /* // Without Optional Chaining
