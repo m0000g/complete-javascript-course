@@ -52,8 +52,37 @@ const restaurant = {
   },
 };
 
+// More maps
+const question = new Map([
+  ['question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again'],
+]);
+
+console.log(question);
+
+// Convert Objects to maps
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz App
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Anser ${key}: ${value}`);
+}
+const answer = prompt('Your answer');
+console.log(answer);
+
+console.log(question.get(Number(answer) === question.get('correct')));
+
 // Maps
-const rest = new Map();
+/* const rest = new Map();
 rest.set('name', 'Clasico Italiano');
 rest.set(1, 'Fiorenze, Italy');
 console.log(rest.set(2, 'Lisbon, Portugal'));
@@ -80,7 +109,7 @@ rest.set(arr, 'Test');
 console.log(rest.get(arr));
 rest.set(document.querySelector('h1'), 'Heading');
 console.log(rest);
-console.log(rest.size);
+console.log(rest.size); */
 
 // Sets
 // A collection of unique values can't hae any duplicates
