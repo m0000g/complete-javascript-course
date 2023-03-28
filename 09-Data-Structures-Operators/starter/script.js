@@ -1,10 +1,6 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+/* const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 // ENHANCED OBJECT LITERALS sample -> Compute name
 const openingHours = {
@@ -32,28 +28,46 @@ const restaurant = {
 
   // ES6 enhanced object literals
   openingHours,
-
+  
   order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
   orderDelivery({ startedIndex = 1, mainIndex = 0, address, time = '20:00' }) {
     console.log(
       `Order received! ${this.starterMenu[startedIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
-    );
-  },
-  orderPasta(ing1, ing2, ing3) {
-    console.log(
-      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
-    );
-  },
-  orderPizza(mainIngridient, ...otherIngridient) {
-    console.log(mainIngridient);
-    console.log(otherIngridient);
-  },
-};
+      );
+    },
+    orderPasta(ing1, ing2, ing3) {
+      console.log(
+        `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+        );
+      },
+      orderPizza(mainIngridient, ...otherIngridient) {
+        console.log(mainIngridient);
+        console.log(otherIngridient);
+      },
+    }; */
+
+// String exercise.
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, departure, arrival, time] = flight.split(';');
+  const output = `${type.startsWith('_Delayed') ? '🔴️ ' : ' '}${type
+    .replaceAll('_', ' ')
+    .trim()} from ${getCode(departure)} to ${getCode(arrival)} (${time.replace(
+    ':',
+    'h'
+  )})`.padStart(46, '#');
+  console.log(output);
+}
 
 // Strings part 3
-
+/* 
 console.log('This+String+to+array'.split('+'));
 console.log('Gabriela Pérez'.split(' '));
 const firstName = 'Gabriela';
@@ -96,7 +110,7 @@ const planesInLine = function (n) {
 
 planesInLine(5);
 planesInLine(3);
-planesInLine(12);
+planesInLine(12); */
 
 // String Methods https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
