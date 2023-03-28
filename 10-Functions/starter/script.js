@@ -1,6 +1,37 @@
 'use strict';
 
-const flight = 'LH234';
+// Functions High-order function vs Call back function
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+// High-Order Function
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('JavaScript is the best!', upperFirstWord);
+transformer('JavaScript is the best!', oneWord);
+
+const high5 = function () {
+  console.log('👋');
+};
+
+document.body.addEventListener('click', high5);
+
+['Hugo', 'Paco', 'Luis'].forEach(high5);
+
+// Functions value vs reference
+
+/* const flight = 'LH234';
 const jonas = {
   name: 'Maria Perez',
   passport: 123123123343412,
@@ -26,7 +57,7 @@ const newPassport = function (person) {
 
 newPassport(jonas);
 checkIn(flight, jonas);
-console.log(jonas);
+console.log(jonas); */
 
 // Functions - Passing arguments value vs reference.
 
