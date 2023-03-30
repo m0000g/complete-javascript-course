@@ -235,3 +235,61 @@ console.log(notPrivate); */
 
 // Closures
 
+/* const secureBooking = function () {
+  let passangerCount = 0;
+  return function () {
+    passangerCount++;
+    console.log(`${passangerCount} passangers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); // passangerCount 1
+booker(); // passangerCount 2
+booker(); // passangerCount 3
+
+console.dir(booker); */
+
+// More Closure examples
+// Example 1
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+
+// Re-assign f
+h();
+f();
+console.dir(f);
+
+// Example 2 - Timmer
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`We are boarding all ${n} passangers`);
+    console.log(`There are 3 groups, each with ${perGroup} passangers`);
+  }, wait * 1000);
+  console.log(`We will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000; // Ignored because it will use the perGroup inside the closure
+boardPassengers(180, 3);
+
+
