@@ -110,7 +110,7 @@ document.body.addEventListener('click', high5);
 ['Hugo', 'Paco', 'Luis'].forEach(high5); */
 
 // The Call and apply methods
-const avianca = {
+/* const avianca = {
   airline: 'Avianca',
   iataCode: 'AV',
   booking: [],
@@ -134,12 +134,12 @@ const eurowings = {
   iataCode: 'EW',
   booking: [],
 };
-
+ */
 // Re-using a method, copy to a function then use call
 // Call first value is this, then you can pass the rest
 // book = (666, 'Sarah Connors'); Does not work
 
-const book = avianca.book;
+/* const book = avianca.book;
 book.call(eurowings, 555, 'Pablito Pérez');
 console.log(eurowings);
 book.call(avianca, 666, 'Sarah Connor');
@@ -187,9 +187,9 @@ avianca.buyPlane = function () {
 document
   .querySelector('.buy')
   .addEventListener('click', avianca.buyPlane.bind(avianca));
-
+ */
 // Partial application
-const addTax = (rate, value) => value + value * rate;
+/* const addTax = (rate, value) => value + value * rate;
 console.log(addTax(0.1, 200));
 
 const addVTA = addTax.bind(null, 0.23); // First parameter null is for this, we do not care about this
@@ -198,12 +198,12 @@ const addVTA = addTax.bind(null, 0.23); // First parameter null is for this, we 
 console.log(addVTA(100));
 console.log(addVTA(23));
 
-/* const addTaxRate = function (rate) {
-  return function (value) {
-    const output = value + value * rate;
-    console.log(output);
-  };
-}; */
+// const addTaxRate = function (rate) {
+//   return function (value) {
+//     const output = value + value * rate;
+//     console.log(output);
+//   };
+// };
 
 const addTaxRate = rate => value => console.log(value + value * rate);
 
@@ -211,3 +211,27 @@ const addVTA2 = addTaxRate(0.23);
 
 addVTA2(100);
 addVTA2(23);
+
+ */
+
+// Inmediately invoked function expressions (IIFE)
+// Why? to hide variables using the function scope
+/* (function () {
+  console.log('This will never run again');
+  const isPrivate1 = 23;
+})();
+
+// console.log(isPrivate1); // it will not work
+
+(() => console.log('This will ALSO never run again'))();
+
+{
+  const isPrivate2 = 23;
+  var notPrivate = 23;
+}
+
+// console.log(isPrivate2); // Not accesible
+console.log(notPrivate); */
+
+// Closures
+
