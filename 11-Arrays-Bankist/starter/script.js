@@ -187,3 +187,29 @@ currenciesUnique.forEach(function (value, _, map) {
   console.log(`${_}: ${value}`);
 });
  */
+
+// Maps
+
+/*
+const eurToUSD = 1.1;
+const movementsUSD = account1.movements.map(function (mov) {
+  return mov * eurToUSD;
+}); */
+
+const eurToUSD = 1.1;
+const movementsUSD = account1.movements.map(mov => mov * eurToUSD);
+
+console.log(account1.movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of account1.movements) movementsUSDfor.push(mov * eurToUSD);
+console.log(movementsUSDfor);
+
+const movementDescriptions = account1.movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'wirthdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementDescriptions);
