@@ -303,7 +303,7 @@ const totalDepositsUSD = movements
 
 const eurToUSD = 1.1;
 const totalDepositsUSD = movements
-  .filter(mov => mov < 0)
+  .filter(mov => mov > 0)
   .map((mov, i, arr) => {
     console.log(arr);
     return mov * eurToUSD;
