@@ -104,11 +104,11 @@ createUsernames(accounts);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const currencies = new Map([
+/* const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
-]);
+]); */
 
 /////////////////////////////////////////////////
 
@@ -252,7 +252,7 @@ console.log(accounts); */
 
 // FILTER
 
-const deposits = movements.filter(function (mov) {
+/* const deposits = movements.filter(function (mov) {
   return mov > 0;
 });
 console.log(movements);
@@ -264,8 +264,9 @@ console.log(depositsFor);
 
 // Showing only the withdrawals
 const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
+console.log(withdrawals); */
 
+// REDUCE
 // Reduce, accumulator is like a Snowball
 // acc accumulator
 // cur current value
@@ -275,7 +276,7 @@ console.log(withdrawals);
 }, 0);
 console.log(balance); */
 
-const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
+/* const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
 console.log(balance);
 
 let balance2 = 0;
@@ -289,3 +290,24 @@ const max = movements.reduce((acc, mov) => {
 }, movements[0]);
 
 console.log(max);
+ */
+
+// CHAINING METHODS
+/* const eurToUSD = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUSD)
+  .reduce((acc, mov) => acc + mov, 0) */
+
+// CHAINING METHODS Checking results inside
+
+const eurToUSD = 1.1;
+const totalDepositsUSD = movements
+  .filter(mov => mov < 0)
+  .map((mov, i, arr) => {
+    console.log(arr);
+    return mov * eurToUSD;
+  })
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsUSD);
