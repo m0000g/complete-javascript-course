@@ -251,10 +251,13 @@ console.log(withdrawals);
 // Reduce, accumulator is like a Snowball
 // acc accumulator
 // cur current value
-const balance = movements.reduce(function (acc, cur, i, arr) {
+/* const balance = movements.reduce(function (acc, cur, i, arr) {
   console.log(`Uteration ${i}: ${acc}`);
   return acc + cur;
 }, 0);
+console.log(balance); */
+
+const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
 console.log(balance);
 
 let balance2 = 0;
