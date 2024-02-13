@@ -82,20 +82,20 @@ const calcPrintBalance = function (movements) {
   labelBalance.textContent = `${balance} €`;
 };
 
-const calDisplaySummary = function (movements) {
-  const incomes = movements
+const calDisplaySummary = function (acc) {
+  const incomes = acc.movements
     .filter(mov => mov > 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes} €`;
 
-  const outcomes = movements
+  const outcomes = acc.movements
     .filter(mov => mov < 0)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(outcomes)} €`;
 
-  const interest = movements
+  const interest = acc.movements
     .filter(mov => mov > 0)
-    .map(deposit => (deposit * 1.2) / 100)
+    .map(deposit => (deposit * acc.interestRate) / 100)
     .filter((int, i, arr) => {
       return int >= 1;
     })
@@ -129,13 +129,17 @@ btnLogin.addEventListener('click', function (e) {
       currentAccount.owner.split(' ')[0]
     }`;
 
+    // Clear input fileds
+    inputLoginUsername.value = inputLoginPin.value = '';
+    inputLoginPin.blur();
+
     containerApp.style.opacity = 100;
     // Display Movements
     displayMovements(currentAccount.movements);
     // Display Balance
     calcPrintBalance(currentAccount.movements);
     // Display Summary
-    calDisplaySummary(currentAccount.movements);
+    calDisplaySummary(currentAccount);
   }
 });
 
