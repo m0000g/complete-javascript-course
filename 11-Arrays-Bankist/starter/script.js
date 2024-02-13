@@ -101,7 +101,6 @@ const calDisplaySummary = function (movements) {
     .filter(mov => mov > 0)
     .map(deposit => (deposit * 1.2) / 100)
     .filter((int, i, arr) => {
-      console.log(arr);
       return int >= 1;
     })
     .reduce((acc, interest) => acc + interest);
@@ -337,3 +336,19 @@ const totalDepositsUSD = movements
   console.log(totalDepositsUSD);
 
   */
+
+// FIND
+
+const firstWithdrawal = movements.find(mov => mov < 0); // Does not return an array, returns one value
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+
+for (const iterator of accounts) {
+  if (iterator.owner === 'Jessica Davis') {
+    console.log(iterator);
+  }
+}
