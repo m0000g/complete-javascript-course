@@ -339,7 +339,7 @@ const totalDepositsUSD = movements
 
 // FIND
 
-const firstWithdrawal = movements.find(mov => mov < 0); // Does not return an array, returns one value
+/* const firstWithdrawal = movements.find(mov => mov < 0); // Does not return an array, returns one value
 console.log(movements);
 console.log(firstWithdrawal);
 
@@ -352,3 +352,4 @@ for (const iterator of accounts) {
     console.log(iterator);
   }
 }
+ */
