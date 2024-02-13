@@ -120,6 +120,19 @@ const createUsernames = function (accs) {
 
 createUsernames(accounts);
 
+// Event handler
+let currentAccount;
+btnLogin.addEventListener('click', function (e) {
+  e.preventDefault();
+  const currentAccount = accounts.find(
+    acc => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+  if (currentAccount.pin === Number(inputLoginPin.value)) {
+    console.log('Login');
+  }
+});
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
